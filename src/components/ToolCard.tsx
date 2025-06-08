@@ -1,15 +1,16 @@
 'use client';
 
+import React from 'react';
+import { useRouter } from 'next/navigation';
+import { Star, StarOff } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
 import {
   Card,
-  CardDescription,
-  CardHeader,
   CardTitle,
+  CardHeader,
+  CardDescription,
 } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Star, StarOff } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import React from 'react';
 
 interface ToolCardProps {
   id: number;
@@ -26,7 +27,7 @@ export function ToolCard({
   title,
   description,
   href,
-  icon,
+  // icon,
   isFavorite,
   onToggleFavorite,
 }: ToolCardProps) {

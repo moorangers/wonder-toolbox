@@ -1,9 +1,11 @@
 'use client';
 
+import { JSX, useState, useEffect } from 'react';
+import { Code2, Image, Wrench } from 'lucide-react';
+
 import toolsData from '@/data/tools.json';
-import { JSX, useEffect, useState } from 'react';
+
 import { ToolCard } from './ToolCard';
-import { Code2, Wrench, Image } from 'lucide-react';
 
 const iconMap: Record<string, JSX.Element> = {
   image: <Image className="w-5 h-5" />,
@@ -47,7 +49,7 @@ export default function ToolList() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-      {sortedTools.map((tool) => (
+      {sortedTools.map((tool: Tool) => (
         <ToolCard
           key={tool.id}
           id={tool.id}
