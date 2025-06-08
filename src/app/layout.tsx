@@ -1,13 +1,17 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_Mono } from 'next/font/google';
-import './globals.css';
-import { TopMenu } from '@/components/layout/TopMenu';
-import { Footer } from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
+
+import './globals.css';
+
+import { Noto_Sans_Mono } from 'next/font/google';
+
+import { Footer } from '@/components/layout/Footer';
+import { TopMenu } from '@/components/layout/TopMenu';
 
 const notoSansMono = Noto_Sans_Mono({
   subsets: ['latin'],
-  variable: '--font-geist',
+  variable: '--font-noto-sans-mono',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -21,11 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={notoSansMono.className}>
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+    <html lang="en" suppressHydrationWarning className={notoSansMono.className}>
+      <body className="min-h-screen flex flex-col">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TopMenu />
-          <main className='min-h-screen flex flex-col'>{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
