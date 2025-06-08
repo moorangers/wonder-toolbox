@@ -13,11 +13,14 @@ export function TopMenu() {
     <nav className="flex items-center justify-between px-6 py-4 border-b">
       {/* Logo */}
       <div className="text-lg font-semibold">
-        <Link href="/">MyApp</Link>
+        <Link href="/">Wonder Toolbox</Link>
       </div>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-4">
+        <Link href="/tools">
+          <Button variant="ghost">Tools</Button>
+        </Link>
         <Link href="/about">
           <Button variant="ghost">About</Button>
         </Link>
@@ -37,6 +40,11 @@ export function TopMenu() {
           </SheetTrigger>
           <SheetContent side="left">
             <div className="flex flex-col space-y-4 mt-6">
+              <Link href="/tools">
+                <Button variant="ghost" className="w-full justify-start">
+                  Tools
+                </Button>
+              </Link>
               <Link href="/about">
                 <Button variant="ghost" className="w-full justify-start">
                   About
